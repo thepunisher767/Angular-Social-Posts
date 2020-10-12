@@ -1,0 +1,20 @@
+<br><br><br>
+
+<div class="formStyle" style="text-align: center">
+    <button onclick="document.getElementById('overlay').style.display='block'">New Thought</button>
+</div>
+
+<br>
+
+<div class="formStyle">
+    <div class="formStyle2" *ngFor="let post of posts; index as i">
+        <app-post [post]="post" (deleted)="onDelete($event)"></app-post>
+    </div>
+</div>
+
+<div class="overlay" id="overlay">
+    <br><br><br><br><br><br><br><br>
+    <div class="formStyleBlue">
+        <app-post-form (submitted)="onSubmit($event)"></app-post-form>
+    </div>
+</div>
